@@ -1,7 +1,7 @@
 "use strict";
 module.exports = {
   up: function(migration, DataTypes, done) {
-    migration.createTable("usermodels", {
+    migration.createTable("Users", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -9,7 +9,9 @@ module.exports = {
         type: DataTypes.INTEGER
       },
       username: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false
       },
       password: {
         type: DataTypes.STRING
@@ -26,6 +28,6 @@ module.exports = {
   },
   down: function(migration, DataTypes, done) {
     // add reverting commands here, calling 'done' when finished
-    migration.dropTable("usermodels").complete(done);
+    migration.dropTable("users").complete(done);
   }
 };

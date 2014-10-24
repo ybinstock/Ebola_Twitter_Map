@@ -1,0 +1,30 @@
+
+<% include ../partials/header %>
+
+    <title> Log In</title>
+
+  </head>
+
+  <body>
+
+    <div class="container page-content">
+      <div class="col-xs-3 col-md-4"></div>
+      <div class="col-xs-6 col-md-4">
+        <h1>Log In</h1>
+
+       <form action="/login" method ="POST">
+    <p>
+      <label for="user">Username:</label>
+      <input type="text" name="username" id="user" autofocus>
+    </p>
+    <p>
+      <label for="pass">Password:</label>
+      <input type="password" name="password" id="pass">
+    </p>
+    <p>
+      <input type="submit" value="Log In" class = "btn btn-primary">
+    </p>
+  </form>
+  <a href="/signup">Don't have an account? Create one here</a>
+
+<% include ../partials/footer %>

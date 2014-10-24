@@ -1,0 +1,112 @@
+.message {
+  margin-top: 20px;
+  margin-bottom: -10px;
+  color: #FC4607;
+}
+
+.page-content {
+  margin-top: 50px;
+}
+
+#left-scroll {
+  height: 588px;
+  overflow: scroll;
+}
+
+.clr:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+h1 {
+  margin-top: 30px;
+}
+
+h4 {
+  margin-bottom: 30px;
+}
+
+form {
+  margin-top: 15px;
+  margin-bottom: 80px;
+}
+
+p {
+  color: white;
+  font-size: 20px;
+}
+
+input {
+  color: black;
+}
+
+.sign-log {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.sign-log input {
+  margin-top: -15px;
+}
+
+.sign-log p {
+  margin-top: 10px;
+}
+
+.sign-log-btn {
+  margin-bottom: -30px;
+}
+
+#tweet-count {
+  display: none;
+}
+
+#counter {
+  display: inline;
+}
+
+#wait-msg {
+  display: none;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+#tweetd img {
+  float: left;
+  width: 50px;
+  margin-right: 10px;
+  border-radius: 50px;
+}
+
+#tweetd div {
+  margin-bottom: 20px;
+}
+
+#map {
+  width: 100%;
+  height: 800px;
+}
+
+#four-oh-four {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.btn {
+  background-color: #FC4607;
+  color: #fff;
+}
+.buttonClass {
+    width:          30px;
+    height:         40px;
+    padding:        10px 60px;
+    display: inline;
+  }
+
+
+body {
+    background-image: url('http://a.abcnews.com/images/Health/GTY_ebola_kab_140805_16x9_992.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

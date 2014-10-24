@@ -1,0 +1,39 @@
+<% include ../partials/header %>
+
+    <title> Sign Up</title>
+
+  </head>
+
+  <body>
+
+    <div class="container page-content">
+      <div class="col-xs-3 col-md-4"></div>
+      <div class="col-xs-6 col-md-4">
+        <h1>Sign Up</h1>
+
+        <p style ="color:red;">
+    <% if(typeof message !== "undefined"){ %>
+    <%= message%>
+    <% } %>
+  </p>
+  <form action="/signup" method ="POST">
+    <p>
+      <label for="user">Username:</label>
+      <input type="text" name="username" id="user" autofocus>
+    </p>
+    <p>
+      <label for="pass">Password:</label>
+      <input type="password" name="password" id="pass">
+    </p>
+    <p>
+      <input type="submit" value=" Sign Up" class = "btn btn-primary">
+    </p>
+  </form>
+
+      <div class="col-xs-3 col-md-4"></div>
+
+       <a href="/login">Have an account? Log in here</a>
+
+    </div>
+  </body>
+</html>

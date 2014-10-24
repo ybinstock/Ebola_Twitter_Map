@@ -5,12 +5,11 @@ var bcrypt = require('bcrypt'),
 
 module.exports = function(sequelize, DataTypes) {
 
-  var User = sequelize.define('user', {
+  var User = sequelize.define('User', {
     username: {
       type: DataTypes.STRING,
       unique: true,
       validate: {
-        notNull: false,
         len: [6, 30]
       }
     },
@@ -19,9 +18,6 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         notEmpty: true
       }
-    },
-    defaultSearch: {
-      type: DataTypes.STRING
     }
   },
     {
@@ -36,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
           return bcrypt.compareSync(userpass, dbpass);
         },
         // create a new user
-        createNewUser: function(username, password, defaultSearch, err, success) {
+        createNewUser: function(username, password, err, success) {
           if (password.length < 6) {
             err({message: 'Your password should be more than 6 characters.'});
           }
@@ -44,12 +40,14 @@ module.exports = function(sequelize, DataTypes) {
             User.create({
               username: username,
               password: User.encryptPass(password),
-              defaultSearch: defaultSearch
+
             }).error(function(error) {
               if (error.username) {
                 err({message: 'Your username should be at least 6 characters.'});
               }
+
               else {
+                console.log("WTF IS THIS???", error);
                 err({message: 'An account with that username already exists.'});
               }
             }).success(function(user) {
