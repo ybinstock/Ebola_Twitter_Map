@@ -89,7 +89,7 @@ var searchKey = 'ebola';
 
   t.track(searchKey);
   console.log('tracking', searchKey);
-
+//render map
   res.render('map');
 });
 

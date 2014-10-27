@@ -1,54 +1,50 @@
 <% include ../partials/header %>
 
     <title> Map </title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <meta name='viewport' content='initial-scale=1,maximum-scale=10,user-scalable=yes' />
     <link href="https://api.tiles.mapbox.com/mapbox.js/v2.0.0/mapbox.css" rel='stylesheet' />
+        <!-- link to scripts -->
 
   </head>
 
   <body>
     <!-- start container -->
     <div class="container page-content">
-      <!-- start row -->
       <div class="row">
-        <!-- start column -->
-        <div class="col-xs-6 col-md-4">
-          <!-- start row -->
+        <div class="col-xs-4 col-md-3">
+
           <div class="row" id="left-search">
-
-            <div id="tweet-count">
-              <h4>Tweets about Ebola
-               <div id="counter"></div></h4>
+            <button id = "startbutton">
+              <h4> Ready for virality? </h4>
+              <div id="tweet-count">
+              <div id="counter"></div>
             </div>
+            </button>
 
-          <!-- end row -->
-          <!-- start row -->
           <div class="row" id="left-scroll">
-            <!-- start column -->
-            <div class="col-md-12">
+
+            <div class="col-xs-10">
               <div id="tweetd"></div>
             </div>
-            <!-- end column -->
           </div>
-          <!-- end row -->
+
         </div>
-        <!-- end column -->
-        <!-- start column -->
-        <div class="col-xs-6 col-md-8">
+        </div>
+
+ <div class="col-xs-6 col-md-9">
           <div id="map"></div>
         </div>
-        <!-- end column -->
-      </div>
-      <!-- end row -->
+
+
+
     </div>
     <!-- end container -->
 
-    <!-- link to scripts -->
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.0.0/mapbox.js'></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="javascripts/globe_tweet.js"></script>
-
   </body>
+  <script type="text/javascript" charset="utf-8">
+  globeTweet.renderMap();
+  $("#startbutton").on("click", function () {
+    globeTweet.startStream();
+  })
+  </script>
 </html>
