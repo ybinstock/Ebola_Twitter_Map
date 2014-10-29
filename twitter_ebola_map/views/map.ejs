@@ -1,50 +1,37 @@
 <% include ../partials/header %>
+  <!-- start container -->
+    <div class="row">
+      <div class="col-xs-4 col-md-3">
 
-    <title> Map </title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=10,user-scalable=yes' />
-    <link href="https://api.tiles.mapbox.com/mapbox.js/v2.0.0/mapbox.css" rel='stylesheet' />
-        <!-- link to scripts -->
-
-  </head>
-
-  <body>
-    <!-- start container -->
-    <div class="container page-content">
-      <div class="row">
-        <div class="col-xs-4 col-md-3">
-
-          <div class="row" id="left-search">
-            <button id = "startbutton">
-              <h4> Ready for virality? </h4>
-              <div id="tweet-count">
+        <div class="row" id="left-search">
+          <button id = "startbutton">
+            <h4> Ready for virality? </h4>
+            <div id="tweet-count">
               <div id="counter"></div>
             </div>
-            </button>
+          </button>
 
-          <div class="row" id="left-scroll">
+        <div class="row" id="left-scroll">
+          <div class="col-xs-10">
+            <div id="tweetd"></div>
 
-            <div class="col-xs-10">
-              <div id="tweetd"></div>
-            </div>
           </div>
-
         </div>
-        </div>
-
- <div class="col-xs-6 col-md-9">
-          <div id="map"></div>
-        </div>
-
-
-
+      </div>
     </div>
+
+  <div class="col-xs-6 col-md-9">
+    <div id="map"></div>
+  </div>
+</div>
     <!-- end container -->
 
   </body>
-  <script type="text/javascript" charset="utf-8">
+  // <script type="text/javascript" charset="utf-8">
   globeTweet.renderMap();
   $("#startbutton").on("click", function () {
     globeTweet.startStream();
   })
-  </script>
+
+  // </script>
 </html>

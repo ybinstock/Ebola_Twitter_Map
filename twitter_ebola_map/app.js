@@ -103,6 +103,11 @@ app.get('/signup', function(req, res) {
   }
 });
 
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+
 
 app.get('/login', function(req, res) {
   if (!req.user) {

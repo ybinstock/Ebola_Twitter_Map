@@ -1,12 +1,3 @@
-
-// start button
-
-// document.getElementById("startbutton").addEventListener("click", starfunction);
-// how do I get the start button to start this entire function?
-// function startfunction() {
-//     document.getElementById("demo").innerHTML = Date();
-// }
-
 var globeTweet = {};
 globeTweet.map = {};
 
@@ -99,4 +90,6 @@ globeTweet.startStream = function() {
 
   });
 };
+
+
 
