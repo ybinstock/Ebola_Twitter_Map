@@ -39,7 +39,7 @@ form {
 }
 
 p {
-  color: white;
+  color: black;
   font-size: 20px;
 }
 
@@ -114,7 +114,23 @@ input {
 
 
 body {
-    background-image: url('http://a.abcnews.com/images/Health/GTY_ebola_kab_140805_16x9_992.jpg');
+    position: relative;
+}
+
+body:after {
+ background-image: url('http://a.abcnews.com/images/Health/GTY_ebola_kab_140805_16x9_992.jpg') ;
+    opacity: 0.4;
+    z-index: -1;
     background-repeat: no-repeat;
     background-size: cover;
+    content: "";
+    display: block;
+    position: absolute;
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
