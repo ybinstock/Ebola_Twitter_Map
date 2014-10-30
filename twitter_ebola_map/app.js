@@ -76,19 +76,21 @@ t.on('tweet', function (tweet) {
   io.sockets.emit('receive_tweet', tweet);
 });
 
+// render home page
 app.get('/', function(req,res ) {
   res.render('index');
 
 });
 
-// root route automatically tracks tweets from searchKey
+// root route automatically tracks tweets from keyword
 app.get('/map', function(req, res) {
 
-// set variable for search keyword
+// set variable for keyword
 var searchKey = 'ebola';
 
   t.track(searchKey);
   console.log('tracking', searchKey);
+
 //render map
   res.render('map');
 });
@@ -96,7 +98,7 @@ var searchKey = 'ebola';
 
 app.get('/signup', function(req, res) {
   if (!req.user) {
-    res.render('signup', {username: '', defaultSearch: ''});
+    res.render('signup', {username: ''});
   }
   else {
     res.redirect('/map');

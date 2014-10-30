@@ -1,5 +1,4 @@
 <% include ../partials/header %>
-  <!-- start container -->
 
   <br>
   <br>
@@ -8,7 +7,7 @@
 
         <div class="row" id="left-search">
           <button id = "startbutton">
-            <h4> Ready for virality? </h4>
+            <h4> Click to go viral </h4>
             <div id="tweet-count">
               <div id="counter"></div>
             </div>
@@ -28,14 +27,14 @@
     <div id="map"></div>
   </div>
 </div>
-    <!-- end container -->
 
   </body>
-  // <script type="text/javascript" charset="utf-8">
+
+ <script type="text/javascript" charset="utf-8">
   globeTweet.renderMap();
   $("#startbutton").on("click", function () {
     globeTweet.startStream();
   })
 
-  // </script>
+</script>
 </html>

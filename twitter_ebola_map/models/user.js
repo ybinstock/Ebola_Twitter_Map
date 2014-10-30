@@ -47,7 +47,7 @@ module.exports = function(sequelize, DataTypes) {
               }
 
               else {
-                console.log("WTF IS THIS???", error);
+                console.log("Error", error);
                 err({message: 'An account with that username already exists.'});
               }
             }).success(function(user) {
@@ -71,10 +71,7 @@ module.exports = function(sequelize, DataTypes) {
         username: username
       }
     })
-    // done(err) // db issues
-    // done(null, false) // no db issues, but user enters incorrect info
-    // done(null, user) // no db issues, and user enters correct info
-    // when that's done...
+
     .complete(function(error, user) {
       if (error) {
         console.log(error);
