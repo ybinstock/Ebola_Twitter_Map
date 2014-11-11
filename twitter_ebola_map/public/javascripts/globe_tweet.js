@@ -21,16 +21,16 @@ globeTweet.startStream = function() {
     loadMessage = $('#load-msg'),
     tweetCount = $('#tweet-count'),
     waitMessage = $('#wait-msg');
-
+  console.log ("vars set");
 
   setTimeout(function() {
     if (count === 0) {
       waitMessage.fadeIn();
     }
   }, 15000);
-
+  console.log("set timeout");
   socket.on('receive_tweet', function(tweet) {
-
+    console.log ("calling socket on event");
     // function to show markers on map
     var showMarker = function(lng, lat) {
       L.mapbox.featureLayer({

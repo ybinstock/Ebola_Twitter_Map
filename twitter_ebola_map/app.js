@@ -77,13 +77,13 @@ t.on('tweet', function (tweet) {
 });
 
 // render home page
-app.get('/', function(req,res ) {
-  res.render('index');
+// app.get('/', function(req,res ) {
+//   res.render('map');
 
-});
+// });
 
 // root route automatically tracks tweets from keyword
-app.get('/map', function(req, res) {
+app.get('/', function(req, res) {
 
 // set variable for keyword
 var searchKey = 'ebola';
@@ -96,59 +96,59 @@ var searchKey = 'ebola';
 });
 
 
-app.get('/signup', function(req, res) {
-  if (!req.user) {
-    res.render('signup', {username: ''});
-  }
-  else {
-    res.redirect('/map');
-  }
-});
+// app.get('/signup', function(req, res) {
+//   if (!req.user) {
+//     res.render('signup', {username: ''});
+//   }
+//   else {
+//     res.redirect('/map');
+//   }
+// });
 
-app.get('/logout', function(req, res){
-  req.logout();
-  res.redirect('/');
-});
-
-
-app.get('/login', function(req, res) {
-  if (!req.user) {
-    res.render('login', {username: '', message: req.flash('loginMessage')});
-  }
-  else {
-    res.redirect('/map');
-  }
-});
+// app.get('/logout', function(req, res){
+//   req.logout();
+//   res.redirect('/');
+// });
 
 
-app.post('/signup', function(req, res) {
-
-  newUsername = req.body.username;
-  newPassword = req.body.password;
-
-  db.User.createNewUser(newUsername, newPassword,
-    function(err) {
-      console.log("THIS IS OUR ERROR",err);
-      res.render('signup', {message: err.message, username: newUsername});
-    },
-    function(success) {
-      res.render('login', {message: success.message, username: newUsername});
-    }
-  );
-});
+// app.get('/login', function(req, res) {
+//   if (!req.user) {
+//     res.render('login', {username: '', message: req.flash('loginMessage')});
+//   }
+//   else {
+//     res.redirect('/map');
+//   }
+// });
 
 
-app.post('/login', passport.authenticate('local', {
-  successRedirect: '/map',
-  failureRedirect: '/login',
-  failureFlash: true
-}));
+// app.post('/signup', function(req, res) {
+
+//   newUsername = req.body.username;
+//   newPassword = req.body.password;
+
+//   db.User.createNewUser(newUsername, newPassword,
+//     function(err) {
+//       console.log("THIS IS OUR ERROR",err);
+//       res.render('signup', {message: err.message, username: newUsername});
+//     },
+//     function(success) {
+//       res.render('login', {message: success.message, username: newUsername});
+//     }
+//   );
+// });
 
 
-app.get('/logout', function(req, res) {
-  req.logout();
-  res.redirect('/');
-});
+// app.post('/login', passport.authenticate('local', {
+//   successRedirect: '/map',
+//   failureRedirect: '/login',
+//   failureFlash: true
+// }));
+
+
+// app.get('/logout', function(req, res) {
+//   req.logout();
+//   res.redirect('/');
+// });
 
 
 // render 404 page when any other URL attempted
